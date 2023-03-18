@@ -1,0 +1,13 @@
+<article>
+<h3><%= product.name %></h3>
+<div class ="d-flex flex-row">
+    <%= image_tag product.image.thumb.url , alt: product.name %>
+  <div class ="px-3 d-flex flex-column "> 
+    <br>
+    <p><%= product.description %></p>
+    <h4> Quantity: <%= quantity %></h4> 
+    <h4><%= humanized_money_with_symbol product.price * quantity %></h4>
+  </div>
+  </div>
+</article>
+<br>
