@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  # namespace :admin do
+  #   get 'categories/index'
+  # end
+  get "/about", to: "about#index"
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
@@ -14,6 +23,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'dashboard#show'
+    resources :categories, except: [:edit, :update, :show, :delete]
     resources :products, except: [:edit, :update, :show]
   end
 
