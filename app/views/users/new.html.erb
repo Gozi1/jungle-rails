@@ -4,7 +4,10 @@
 </header>
 <%= form_for :user, url: '/users' do |f| %>
 <div class="form-group">
-  Name: <%= f.text_field :name, placeholder:'Enter Name', class: 'form-control' %>
+  First Name: <%= f.text_field :first_name, placeholder:'Enter Name', class: 'form-control' %>
+  <br>
+  <div class="form-group">
+  Last Name: <%= f.text_field :last_name, placeholder:'Enter Name', class: 'form-control' %>
   <br>
   Email: <%= f.text_field :email,  placeholder:'Enter Email', class: 'form-control' %>
   <br>
